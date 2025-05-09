@@ -1,3 +1,3 @@
 package start
 
-const ConfigFile = "configs/configs.yaml"
+const ConfigFile = "../configs/configs.yaml"

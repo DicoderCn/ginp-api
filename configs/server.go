@@ -8,5 +8,5 @@ const (
 
 // 初始化配置
 func init() {
-	cfg.SetDefault(ServerPort, ":8082")
+	cfg.SetDefault(ServerPort, "8082")
 }
