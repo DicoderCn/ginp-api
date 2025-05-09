@@ -17,9 +17,9 @@ func startDB() {
 	)
 
 	//迁移表
-	if mysql.GetDbInstance() != nil {
+	if mysql.GetWriteDb() != nil {
 		//自动迁移表结构
-		err := mysql.GetDbInstance().AutoMigrate(EntityAutoMigrateList...)
+		err := mysql.GetWriteDb().AutoMigrate(EntityAutoMigrateList...)
 		if err != nil {
 			fmt.Println("迁移表结构失败" + err.Error())
 			panic(err)

@@ -40,8 +40,14 @@ func InitDb(ip, port, userName, dbName, dbPwd string) {
 
 }
 
+func GetReadDb() *gorm.DB {
+	//返回数据库实例的副本
+	copyDb := *db
+	return &copyDb
+}
+
 // GetDbInstance 获取gorm示例的副本
-func GetDbInstance() *gorm.DB {
+func GetWriteDb() *gorm.DB {
 	//返回数据库实例的副本
 	copyDb := *db
 	return &copyDb

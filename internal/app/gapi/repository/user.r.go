@@ -14,7 +14,7 @@ type DbUser struct {
 	dbRead  *gorm.DB
 }
 
-func NewUser(dbWrite_, dbRead_ *gorm.DB) *DbUser {
+func NewDbUser(dbWrite_, dbRead_ *gorm.DB) *DbUser {
 	return &DbUser{
 		dbWrite: dbWrite_,
 		dbRead:  dbRead_,
