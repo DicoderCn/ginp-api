@@ -12,6 +12,7 @@ const (
 
 // entityName传入大驼峰如 UserGroup
 func GenEntity() {
+
 	entityName := gen.Input(InputEntityName, nil)
 	entityName = gen.NameToCameBig(entityName)
 	if entityName == "" {
@@ -33,5 +34,6 @@ func GenEntity() {
 }
 
 func getPathEntity(lineName string) string {
-	return filepath.Join(dirEntidy, lineName+".e.go")
+	p := filepath.Join(dirEntidy, lineName+".e.go")
+	return p
 }
