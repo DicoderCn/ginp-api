@@ -15,11 +15,7 @@ func GenEntity() {
 		return
 	}
 	lineName := gen.NameToLine(entityName)
-	var replaceData map[string]string = map[string]string{
-		ReplaceEntityName: entityName,
-		ReplaceLineName:   lineName,
-	}
-
+	replaceData := getBaseReplaceMap(entityName)
 	//开始生成
 	templatePath := filepath.Join(GetDirTemplate(), "entity.tmpl")
 	outputFilePath := filepath.Join(GetDirEntidy(), lineName+".e.go")

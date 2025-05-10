@@ -48,7 +48,6 @@ func (s *DbUser) FindOne(wheres []*where.Condition) (*entity.User, error) {
 	if entityInfo == nil || entityInfo.ID <= 0 {
 		return nil, fmt.Errorf("查询到的数据为空")
 	}
-
 	return entityInfo, nil
 }
 
