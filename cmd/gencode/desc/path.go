@@ -11,7 +11,7 @@ func GetPwd() string {
 	if err != nil {
 		panic(err)
 	}
-	println("pwd:", pwd)
+	// println("pwd:", pwd)
 	return pwd
 }
 

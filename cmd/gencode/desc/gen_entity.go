@@ -1,7 +1,6 @@
 package desc
 
 import (
-	"fmt"
 	"ginp-api/internal/gen"
 	"path/filepath"
 )
@@ -24,9 +23,9 @@ func GenEntity() {
 	//开始生成
 	templatePath := filepath.Join(GetDirTemplate(), "entity.tmpl")
 	outputFilePath := filepath.Join(GetDirEntidy(), lineName+"e.go")
-	fmt.Printf("templatePath: %v\n", templatePath)
-	fmt.Printf("outputFilePath: %v\n", outputFilePath)
-	return
+	// fmt.Printf("templatePath: %v\n", templatePath)
+	// fmt.Printf("outputFilePath: %v\n", outputFilePath)
+
 	gen.ReplaceAndWriteTemplate(
 		templatePath,
 		outputFilePath,
