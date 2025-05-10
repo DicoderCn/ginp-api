@@ -15,10 +15,6 @@ func main() {
 	switch result {
 	case "1":
 		gen.Input(desc.InputEntityName, func(input string) {
-			if input == "" {
-				println("实体名称不能为空")
-				return
-			}
 			desc.GenEntity(gen.NameToCameBig(input))
 		})
 	}

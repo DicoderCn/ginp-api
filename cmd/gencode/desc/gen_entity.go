@@ -12,6 +12,10 @@ const (
 
 // entityName传入大驼峰如 UserGroup
 func GenEntity(entityName string) {
+	if entityName == "" {
+		println("实体名称不能为空")
+		return
+	}
 	var replaceData map[string]string = map[string]string{
 		ReplaceEntityName: entityName,
 		ReplaceLineName:   gen.NameToLine(entityName),
