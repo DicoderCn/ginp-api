@@ -22,9 +22,10 @@ func GenEntity() {
 		ReplaceEntityName: entityName,
 		ReplaceLineName:   gen.NameToLine(entityName),
 	}
+
 	//开始生成
 	gen.ReplaceAndWriteTemplate(
-		pathTemplateEntity,
+		filepath.Join(pathTemplateEntity),
 		getPathEntity(entityName),
 		replaceData,
 	)
