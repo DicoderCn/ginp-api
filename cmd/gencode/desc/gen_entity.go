@@ -22,7 +22,7 @@ func GenEntity() {
 
 	//开始生成
 	templatePath := filepath.Join(GetDirTemplate(), "entity.tmpl")
-	outputFilePath := filepath.Join(GetDirEntidy(), lineName+"e.go")
+	outputFilePath := filepath.Join(GetDirEntidy(), lineName+".e.go")
 	// fmt.Printf("templatePath: %v\n", templatePath)
 	// fmt.Printf("outputFilePath: %v\n", outputFilePath)
 
