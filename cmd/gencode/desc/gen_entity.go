@@ -5,11 +5,6 @@ import (
 	"path/filepath"
 )
 
-const (
-	pathTemplateEntity = "./templates/entity.tmpl"
-	dirEntidy          = "../../internal/app/gapi/entity"
-)
-
 // entityName传入大驼峰如 UserGroup
 func GenEntity() {
 
@@ -27,13 +22,8 @@ func GenEntity() {
 
 	//开始生成
 	gen.ReplaceAndWriteTemplate(
-		filepath.Join(pathTemplateEntity),
-		getPathEntity(lineName),
+		filepath.Join(GetDirTemplate(), "entity.tmpl"),
+		filepath.Join(GetDirEntidy(), lineName+"e.go"),
 		replaceData,
 	)
-}
-
-func getPathEntity(lineName string) string {
-	p := filepath.Join(dirEntidy, lineName+".e.go")
-	return p
 }

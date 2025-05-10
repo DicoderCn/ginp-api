@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	desc.GetPwd()
 	result := gen.Input(desc.InputGenType, nil)
 
 	switch result {
