@@ -7,15 +7,16 @@ import (
 
 func main() {
 	result := gen.Input(desc.InputGenType, nil)
-	if result != "1" || result != "2" || result != "3" {
-		println("输入错误" + result)
-		return
-	}
+
 	switch result {
 	case "1":
-		gen.Input(desc.InputEntityName, func(input string) {
-			desc.GenEntity(gen.NameToCameBig(input))
-		})
+		desc.GenEntity()
+	case "2":
+
+	case "3":
+
+	default:
+		println("输入错误")
 	}
 
 }
