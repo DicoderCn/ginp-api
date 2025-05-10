@@ -18,19 +18,20 @@ func GenEntity() {
 		println("实体名称不能为空")
 		return
 	}
+	lineName := gen.NameToLine(entityName)
 	var replaceData map[string]string = map[string]string{
 		ReplaceEntityName: entityName,
-		ReplaceLineName:   gen.NameToLine(entityName),
+		ReplaceLineName:   lineName,
 	}
 
 	//开始生成
 	gen.ReplaceAndWriteTemplate(
 		filepath.Join(pathTemplateEntity),
-		getPathEntity(entityName),
+		getPathEntity(lineName),
 		replaceData,
 	)
 }
 
-func getPathEntity(entityName string) string {
-	return filepath.Join(dirEntidy, entityName+".go")
+func getPathEntity(lineName string) string {
+	return filepath.Join(dirEntidy, lineName+".e.go")
 }
