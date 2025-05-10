@@ -8,13 +8,13 @@ import (
 )
 
 // CreateWithDb 创建
-func CreateNew(Entity any, db *gorm.DB) error {
+func Create(Entity any, db *gorm.DB) error {
 	result := db.Create(Entity)
 	return result.Error
 }
 
 // FindOneWithDb 查找一个
-func FindOneNew(findConf *FindOneConfig) error {
+func FindOne(findConf *FindOneConfig) error {
 	whereStr, whereValues, err := where.ConvertToGormWhere(findConf.Wheres)
 	if err != nil {
 		return err
@@ -44,7 +44,7 @@ func FindOneNew(findConf *FindOneConfig) error {
 }
 
 // 查询关联查询的数据--1.支持关联查询 2.参数使用结构体形式更灵活 3.不再使用dto,直接返回实体本体，如果json时不需要返回字段则json标签填入 - 即可
-func FindListNew(findConf *FindListConfig) error {
+func FindList(findConf *FindListConfig) error {
 	findConf.Db, _ = formatDbExtra(findConf.Db, findConf.Extra) //组装附加条件
 	db, err := formatDbWhere(findConf.Db, findConf.Conditions)  //组装wheres
 	if err != nil {
@@ -81,7 +81,7 @@ func FindListNew(findConf *FindListConfig) error {
 }
 
 // 删除
-func DeleteNew(delConf *DeleteConfig) error {
+func Delete(delConf *DeleteConfig) error {
 	whereStr, whereValues, err := where.ConvertToGormWhere(delConf.Wheres)
 	if err != nil {
 		return err
@@ -108,7 +108,7 @@ func DeleteNew(delConf *DeleteConfig) error {
 }
 
 // CreateBatch 批量创建,WhenErrorUpdate表示遇到冲突时是否更新记录
-func CreateBatchNew(tableName string, newDtoCreateList any, WhenErrorUpdate bool, db *gorm.DB) error {
+func CreateBatch(tableName string, newDtoCreateList any, WhenErrorUpdate bool, db *gorm.DB) error {
 	//开启事务
 	db = db.Begin()
 	// entityInfo := newEntity                              //为分配一个内存空间
@@ -129,13 +129,13 @@ func CreateBatchNew(tableName string, newDtoCreateList any, WhenErrorUpdate bool
 	return nil
 }
 
-// UpdateNew   指定配置更新
+// Update   指定配置更新
 // 注意：2025-03-21.如果传入的updateColumnsCfg为空，则会调用Save方法，save方法要求主键存在字段
 // 要特别注意零值问题，updateColumnsCfg可以指定要更新的字段类型或者字段名，如果不传入则默认更新非零值字段。
 // updateColumnsCfg只传入一个值时会先跟update_config里面的几个常量进行匹配,
 // 匹配到了则按照里面的规则进行更新，如UpdateColumnsNotZeroAndNumber表示更新所有非0值和整型的字段
 // 否则会按照其是一个指定字段来更新，传入多个值是会认为是手动指定要更新字段。
-func UpdateNew(updateCfg *UpdateConfNew) error {
+func Update(updateCfg *UpdateConfNew) error {
 	// updateEntity := newEntity //为分配一个内存空间
 
 	updateColumns := make([]string, 0) //要更新的字段
@@ -175,8 +175,8 @@ func UpdateNew(updateCfg *UpdateConfNew) error {
 	return dbx.Error
 }
 
-// GetTotalWithDb 获取符合某个条件的数量
-func GetTotalWithDb(wheres []*where.Condition, newEntity any, db *gorm.DB) (int64, error) {
+// GetTotal 获取符合某个条件的数量
+func GetTotal(wheres []*where.Condition, newEntity any, db *gorm.DB) (int64, error) {
 	var count int64
 	whereStr, whereValues, err := where.ConvertToGormWhere(wheres)
 	if err != nil {

@@ -23,7 +23,7 @@ func NewDbUser(dbWrite_, dbRead_ *gorm.DB) *DbUser {
 
 // Create 创建数据
 func (s *DbUser) Create(dtoCreate *entity.User) (*entity.User, error) {
-	err := dbops.CreateNew(dtoCreate, s.dbWrite)
+	err := dbops.Create(dtoCreate, s.dbWrite)
 	if err != nil {
 		return nil, err
 	}
@@ -37,7 +37,7 @@ func (s *DbUser) Create(dtoCreate *entity.User) (*entity.User, error) {
 // FindOne 查询一条数据
 func (s *DbUser) FindOne(wheres []*where.Condition) (*entity.User, error) {
 	entityInfo := new(entity.User)
-	err := dbops.FindOneNew(&dbops.FindOneConfig{
+	err := dbops.FindOne(&dbops.FindOneConfig{
 		Wheres:    wheres,
 		Db:        s.dbRead,
 		NewEntity: entityInfo,
@@ -57,7 +57,7 @@ func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*ent
 
 	var entityList []*entity.User
 	//传入的entityList必须要加 &取地址符号，切片本身并不是指针，向函数传递一个切片时，实际上是复制了该切片的结构体
-	err := dbops.FindListNew(&dbops.FindListConfig{
+	err := dbops.FindList(&dbops.FindListConfig{
 		Conditions:     wheres,
 		Db:             s.dbRead,
 		Extra:          extra,
@@ -71,7 +71,7 @@ func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*ent
 	}
 
 	//开始统计总数
-	total, err := dbops.GetTotalWithDb(wheres, new(entity.User), s.dbRead)
+	total, err := dbops.GetTotal(wheres, new(entity.User), s.dbRead)
 	if err != nil {
 		return []*entity.User{}, 0, err
 	}
@@ -82,7 +82,7 @@ func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*ent
 // Update 更新数据
 func (s *DbUser) Update(wheres []*where.Condition, dtoUpdate *entity.User, columnsCfg ...string) error {
 	// dbops.UpdateWithDb(wheres, new(entity.User), dtoUpdate, s.dbWrite, columnsCfg...)
-	err := dbops.UpdateNew(&dbops.UpdateConfNew{
+	err := dbops.Update(&dbops.UpdateConfNew{
 		Wheres:           wheres,
 		NewEntity:        new(entity.User),
 		Db:               s.dbWrite,
@@ -94,7 +94,7 @@ func (s *DbUser) Update(wheres []*where.Condition, dtoUpdate *entity.User, colum
 
 // Delete 删除数据
 func (s *DbUser) Delete(wheres []*where.Condition) error {
-	err := dbops.DeleteNew(&dbops.DeleteConfig{
+	err := dbops.Delete(&dbops.DeleteConfig{
 		Wheres:     wheres,
 		Db:         s.dbWrite,
 		SoftDelete: false,
@@ -105,6 +105,6 @@ func (s *DbUser) Delete(wheres []*where.Condition) error {
 
 // GetTotal 获取总数
 func (s *DbUser) GetTotal(wheres []*where.Condition) (int64, error) {
-	total, err := dbops.GetTotalWithDb(wheres, new(entity.User), s.dbRead)
+	total, err := dbops.GetTotal(wheres, new(entity.User), s.dbRead)
 	return total, err
 }
