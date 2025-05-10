@@ -1,6 +1,7 @@
 package gen
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -10,6 +11,9 @@ import (
 // ReplaceAndWriteTemplate 传入一个tmpl模板文件路径，一个占位符文本，一个真实值文本，输出文件路径四个参数。
 // 实现读取tmp模板文件的值并将占位符本替换成传入的真实值，将最终替换好的文本写入到传入的输出文件路径中。
 func ReplaceAndWriteTemplate(tmplFilePath string, outputFilePath string, placeholderMap map[string]string) error {
+	fmt.Println("tmplFilePath:", tmplFilePath)
+	fmt.Println("outputFilePath:", outputFilePath)
+	fmt.Println("placeholderMap:", placeholderMap)
 	//判断路径outputFilePath所在目录是否存在，不存在则先创建目录
 	outputFileDir := filepath.Dir(outputFilePath)
 	_, err := os.Stat(outputFileDir)
