@@ -15,7 +15,9 @@ func startGinServer() {
 	r := gin.Default()
 
 	// 设置模板路径
-	// r.LoadHTMLFiles("static/templates/index/index.html")
+	r.LoadHTMLGlob("view/*")
+
+	// r.LoadHTMLFiles("view/*")
 	//我们注册了 "/static" 路径，并指定其对应的静态文件目录为 "./static"
 	r.Static("/static", "./static")
 	//我们注册了 "/assets" 路径，并指定其对应的静态文件目录为 "/templates/index/assets"

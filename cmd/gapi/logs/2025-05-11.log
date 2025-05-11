@@ -99,3 +99,229 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 15:53:38 | 404 |        10.5µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 15:53:41 | 404 |       2.833µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 15:54:13 | 404 |     397.417µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 15:55:12 | 404 |       5.083µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:26:30 | 404 |      36.666µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:26:31 | 404 |       7.917µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:26:31 | 404 |       5.625µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:27:02 | 404 |      26.458µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:27:03 | 404 |       7.917µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:27:04 | 404 |       7.708µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:27:04 | 404 |       9.125µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:29:24 | 404 |        9.25µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:29:25 | 404 |       6.625µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:31:19 | 404 |        14.5µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:31:22 | 404 |       9.625µs |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 16:31:25 | 404 |        5.75µs |             ::1 | GET      "/"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:36:54 | 404 |       7.542µs |             ::1 | GET      "/view/index"
+[GIN] 2025/05/11 - 16:36:58 | 404 |          28µs |             ::1 | GET      "/view/index1"
+[GIN] 2025/05/11 - 16:37:00 | 404 |       8.458µs |             ::1 | GET      "/view/index2"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /                         --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+[GIN] 2025/05/11 - 16:37:25 | 200 |    1.282375ms |             ::1 | GET      "/"
+[GIN] 2025/05/11 - 18:20:40 | 200 |       8.582ms |             ::1 | GET      "/"
