@@ -36,5 +36,5 @@ func PathRouter(lineName string) string {
 // 组装实体路径 entity
 func PathEntity(lineName string) string {
 	baseName := gen.NameToAllSmall(lineName)
-	return filepath.Join(GetDirEntidy(), baseName, baseName+".e.go")
+	return filepath.Join(GetDirEntidy(), baseName+".e.go")
 }
