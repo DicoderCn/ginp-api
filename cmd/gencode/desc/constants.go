@@ -6,7 +6,7 @@ const (
 	ReplaceEntityName = "$ENTITY_NAME$"
 	ReplaceLineName   = "$ENTITY_LINE$"
 	//全小写命名
-	ReplaceAllSmall = "$PACKAGE_NAME$"
+	ReplacePackageName = "$PACKAGE_NAME$"
 )
 
 // 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group
@@ -14,9 +14,9 @@ func getBaseReplaceMap(BigCameName string) map[string]string {
 	BigCameName = gen.NameToCameBig(BigCameName)
 	lineName := gen.NameToLine(BigCameName)
 	var replaceData map[string]string = map[string]string{
-		ReplaceEntityName: BigCameName,
-		ReplaceLineName:   lineName,
-		ReplaceAllSmall:   gen.NameToAllSmall(lineName),
+		ReplaceEntityName:  BigCameName,
+		ReplaceLineName:    lineName,
+		ReplacePackageName: gen.NameToAllSmall(lineName),
 	}
 	return replaceData
 }
