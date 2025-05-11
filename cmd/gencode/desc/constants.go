@@ -16,6 +16,7 @@ func getBaseReplaceMap(BigCameName string) map[string]string {
 	var replaceData map[string]string = map[string]string{
 		ReplaceEntityName: BigCameName,
 		ReplaceLineName:   lineName,
+		ReplaceAllSmall:   gen.NameToAllSmall(lineName),
 	}
 	return replaceData
 }

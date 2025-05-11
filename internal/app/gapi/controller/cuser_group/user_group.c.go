@@ -1,9 +1,9 @@
-package c$ENTITY_ALL_SMALL$
+package cuser_group
 
 import (
 	"ginp-api/internal/app/gapi/dto/comdto"
 	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service/s$ENTITY_ALL_SMALL$"
+	"ginp-api/internal/app/gapi/service/suser_group"
 	"ginp-api/pkg/where"
 
 	"github.com/DicoderCn/ginp"
@@ -15,7 +15,7 @@ func FindByID(ctx *ginp.ContextPlus) {
 		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
-	info, err := s$ENTITY_ALL_SMALL$.Model().FindOneById(params.ID)
+	info, err := suser_group.Model().FindOneById(params.ID)
 	if err != nil {
 		ctx.FailData(err.Error())
 		return
@@ -24,13 +24,13 @@ func FindByID(ctx *ginp.ContextPlus) {
 }
 
 func Create(ctx *ginp.ContextPlus) {
-	var params *entity.$ENTITY_NAME$
+	var params *entity.UserGroup
 	if err := ctx.ShouldBindJSON(&params); err != nil {
 		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
-	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	info, err := s$ENTITY_ALL_SMALL$.Model().Create(params)
+	//也可以自己创建并传入读写db: tables.NewUserGroup(wdb,rdb)
+	info, err := suser_group.Model().Create(params)
 	if err != nil {
 		ctx.FailData("创建失败" + err.Error())
 		return
@@ -39,14 +39,14 @@ func Create(ctx *ginp.ContextPlus) {
 }
 
 func Update(ctx *ginp.ContextPlus) {
-	var params *entity.$ENTITY_NAME$
+	var params *entity.UserGroup
 	if err := ctx.ShouldBindJSON(&params); err != nil {
 		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
 	wheres := where.Format(where.OptEqual("id", params.ID))
-	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := s$ENTITY_ALL_SMALL$.Model().Update(wheres, params)
+	//也可以自己创建并传入读写db: tables.NewUserGroup(wdb,rdb)
+	err := suser_group.Model().Update(wheres, params)
 	if err != nil {
 		ctx.FailData("修改失败" + err.Error())
 		return
@@ -61,8 +61,8 @@ func Delete(ctx *ginp.ContextPlus) {
 		return
 	}
 
-	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := s$ENTITY_ALL_SMALL$.Model().DeleteById(params.ID)
+	//也可以自己创建并传入读写db: tables.NewUserGroup(wdb,rdb)
+	err := suser_group.Model().DeleteById(params.ID)
 	if err != nil {
 		ctx.FailData("删除失败" + err.Error())
 		return
@@ -77,8 +77,8 @@ func Search(ctx *ginp.ContextPlus) {
 		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
-	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	list, total, err := s$ENTITY_ALL_SMALL$.Model().FindList(params.Wheres, params.Extra)
+	//也可以自己创建并传入读写db: tables.NewUserGroup(wdb,rdb)
+	list, total, err := suser_group.Model().FindList(params.Wheres, params.Extra)
 	if err != nil {
 		ctx.FailData("查询失败" + err.Error())
 		return
