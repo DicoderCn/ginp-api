@@ -15,6 +15,7 @@ func GenEntity() {
 		return
 	}
 	lineName := gen.NameToLine(entityName)
+	println("lineName:" + lineName + ",entityName" + entityName)
 	replaceData := getBaseReplaceMap(entityName)
 
 	//1.开始生成：entity文件
