@@ -1,0 +1,17 @@
+package s$ENTITY_LINE$
+
+import (
+	"ginp-api/internal/app/gapi/model/m$ENTITY_LINE$"
+	"ginp-api/internal/db/mysql"
+)
+
+var $ENTITY_NAME$ *m$ENTITY_LINE$.Model
+
+func Model() *m$ENTITY_LINE$.Model {
+	if $ENTITY_NAME$ == nil {
+		dbRead := mysql.GetReadDb()
+		dbWrite := mysql.GetWriteDb()
+		$ENTITY_NAME$ = m$ENTITY_LINE$.NewModel(dbRead, dbWrite)
+	}
+	return $ENTITY_NAME$
+}

@@ -1,4 +1,4 @@
-package controller
+package c$ENTITY_LINE$
 
 import (
 	"ginp-api/internal/app/gapi/dto/comdto"
@@ -9,78 +9,78 @@ import (
 	"github.com/DicoderCn/ginp"
 )
 
-func FindByID(c *ginp.ContextPlus) {
+func FindByID(ctx *ginp.ContextPlus) {
 	var params *comdto.ReqFindById
-	if err := c.ShouldBindJSON(&params); err != nil {
-		c.FailData("请求参数有误" + err.Error())
+	if err := ctx.ShouldBindJSON(&params); err != nil {
+		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
-	info, err := s$ENTITY_LINE$.Db()FindOneById(params.ID)
+	info, err := s$ENTITY_LINE$.Model().FindOneById(params.ID)
 	if err != nil {
-		c.FailData(err.Error())
+		ctx.FailData(err.Error())
 		return
 	}
-	c.SuccessData(info)
+	ctx.SuccessData(info)
 }
 
-func Create(c *ginp.ContextPlus) {
+func Create(ctx *ginp.ContextPlus) {
 	var params *entity.$ENTITY_NAME$
-	if err := c.ShouldBindJSON(&params); err != nil {
-		c.FailData("请求参数有误" + err.Error())
+	if err := ctx.ShouldBindJSON(&params); err != nil {
+		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	info, err := s$ENTITY_LINE$.Db()Create(params)
+	info, err := s$ENTITY_LINE$.Model().Create(params)
 	if err != nil {
-		c.FailData("创建失败" + err.Error())
+		ctx.FailData("创建失败" + err.Error())
 		return
 	}
-	c.SuccessData(info)
+	ctx.SuccessData(info)
 }
 
-func Update(c *ginp.ContextPlus) {
+func Update(ctx *ginp.ContextPlus) {
 	var params *entity.$ENTITY_NAME$
-	if err := c.ShouldBindJSON(&params); err != nil {
-		c.FailData("请求参数有误" + err.Error())
+	if err := ctx.ShouldBindJSON(&params); err != nil {
+		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
 	wheres := where.Format(where.OptEqual("id", params.ID))
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := s$ENTITY_LINE$.Db()Update(wheres, params)
+	err := s$ENTITY_LINE$.Model().Update(wheres, params)
 	if err != nil {
-		c.FailData("修改失败" + err.Error())
+		ctx.FailData("修改失败" + err.Error())
 		return
 	}
-	c.Success()
+	ctx.Success()
 }
 
-func Delete(c *ginp.ContextPlus) {
+func Delete(ctx *ginp.ContextPlus) {
 	var params *comdto.ReqDelete
-	if err := c.ShouldBindJSON(&params); err != nil {
-		c.FailData("请求参数有误" + err.Error())
+	if err := ctx.ShouldBindJSON(&params); err != nil {
+		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
 
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := s$ENTITY_LINE$.Db()DeleteById(params.ID)
+	err := s$ENTITY_LINE$.Model().DeleteById(params.ID)
 	if err != nil {
-		c.FailData("删除失败" + err.Error())
+		ctx.FailData("删除失败" + err.Error())
 		return
 	}
-	c.Success()
+	ctx.Success()
 	return
 }
 
-func Search(c *ginp.ContextPlus) {
+func Search(ctx *ginp.ContextPlus) {
 	var params *comdto.ReqSearch
-	if err := c.ShouldBindJSON(&params); err != nil {
-		c.FailData("请求参数有误" + err.Error())
+	if err := ctx.ShouldBindJSON(&params); err != nil {
+		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	list, total, err := s$ENTITY_LINE$.Db()FindList(params.Wheres, params.Extra)
+	list, total, err := s$ENTITY_LINE$.Model().FindList(params.Wheres, params.Extra)
 	if err != nil {
-		c.FailData("查询失败" + err.Error())
+		ctx.FailData("查询失败" + err.Error())
 		return
 	}
 
@@ -90,6 +90,6 @@ func Search(c *ginp.ContextPlus) {
 		PageNum:  uint(params.Extra.PageNum),
 		PageSize: uint(params.Extra.PageSize),
 	}
-	c.SuccessData(resp)
+	ctx.SuccessData(resp)
 
 }

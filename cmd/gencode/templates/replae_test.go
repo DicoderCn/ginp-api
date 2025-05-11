@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// 快速将现有的文件做成模板
+// 快速将现有的文件做成模板文件
 func TestReplace(t *testing.T) {
 
 	demoLineName := "user"
