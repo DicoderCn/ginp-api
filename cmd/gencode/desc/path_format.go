@@ -30,7 +30,7 @@ func PathModel(lineName string) string {
 func PathRouter(lineName string) string {
 	lineName = gen.NameToLine(lineName)
 	// allSmallName := gen.NameToAllSmall(lineName)
-	return filepath.Join(GetDirRouter(), lineName+".r.go")
+	return filepath.Join(GetDirRouter(), "r."+lineName+".go")
 }
 
 // 组装实体路径 entity
