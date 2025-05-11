@@ -6,7 +6,6 @@ import (
 	"time"
 )
 
-var _ typ.IEntity = (*DemoTable)(nil) // U实体必须实现接口GenConfig
 const tableNameDemoTable = "demo_table"
 
 type DemoTable struct {
@@ -15,6 +14,8 @@ type DemoTable struct {
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" `
 }
+
+var _ typ.IEntity = (*DemoTable)(nil) // U实体必须实现接口GenConfig
 
 func (DemoTable) GenConfig() *gen.EntityConfig {
 	return &gen.EntityConfig{
