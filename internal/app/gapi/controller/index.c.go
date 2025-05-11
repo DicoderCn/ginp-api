@@ -1,4 +1,4 @@
-package cindex
+package controller
 
 import (
 	"github.com/DicoderCn/ginp"

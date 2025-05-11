@@ -1,4 +1,4 @@
-package cuser
+package controller
 
 import (
 	"ginp-api/internal/app/gapi/dto/comdto"
