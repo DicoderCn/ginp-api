@@ -29,12 +29,12 @@ func PathModel(lineName string) string {
 
 // 组装路由路径 router
 func PathRouter(lineName string) string {
-	baseName := gen.NameToAllSmall(lineName)
+	baseName := gen.NameToLine(lineName)
 	return filepath.Join(GetDirRouter(), baseName+".r.go")
 }
 
 // 组装实体路径 entity
 func PathEntity(lineName string) string {
-	baseName := gen.NameToAllSmall(lineName)
+	baseName := gen.NameToLine(lineName)
 	return filepath.Join(GetDirEntidy(), baseName+".e.go")
 }
