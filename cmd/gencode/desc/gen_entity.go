@@ -2,7 +2,6 @@ package desc
 
 import (
 	"ginp-api/internal/gen"
-	"path/filepath"
 )
 
 // entityName传入大驼峰如 UserGroup
@@ -20,12 +19,12 @@ func GenEntity() {
 
 	//1.开始生成：entity文件
 	tPathEntity := TemplatePathEntity()
-	oPathEntity := filepath.Join(GetDirEntidy(), lineName+".e.go")
+	oPathEntity := PathEntity(lineName)
 	gen.ReplaceAndWriteTemplate(tPathEntity, oPathEntity, replaceData)
 
 	//2.开始生成：router文件
 	tPathRouter := TemplatePathRouter()
-	oPathRouter := filepath.Join(GetDirRouter(), lineName+".r.go")
+	oPathRouter := PathRouter(lineName)
 	gen.ReplaceAndWriteTemplate(tPathRouter, oPathRouter, replaceData)
 
 	//3.开始生成：controller文件

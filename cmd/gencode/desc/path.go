@@ -78,6 +78,18 @@ func PathModel(lineName string) string {
 	return filepath.Join(GetDirModel(), "m"+baseName, baseName+".m.go")
 }
 
+// 组装路由路径 router
+func PathRouter(lineName string) string {
+	baseName := gen.NameToAllSmall(lineName)
+	return filepath.Join(GetDirRouter(), baseName+".r.go")
+}
+
+// 组装实体路径 entity
+func PathEntity(lineName string) string {
+	baseName := gen.NameToAllSmall(lineName)
+	return filepath.Join(GetDirEntidy(), baseName, baseName+".e.go")
+}
+
 // 模板路径 entity
 func TemplatePathEntity() string {
 	return filepath.Join(GetDirTemplate(), "entity.tmpl")
