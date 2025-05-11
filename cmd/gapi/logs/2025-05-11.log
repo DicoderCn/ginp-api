@@ -417,3 +417,53 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8083
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /                         --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+2025/05/11 22:02:28 ::1 POST /api/user/create 200  user_id:0 request:map[] respond:map[code:0 data:创建失败Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'vip_end_at' at row 1 msg:fail]
+[GIN] 2025/05/11 - 22:02:28 | 200 |   73.302042ms |             ::1 | POST     "/api/user/create?avatar_url="
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (2): 
+	- 
+	- index.html
+
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /                         --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/create          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/findById        --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/update          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/delete          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] POST   /api/user/search          --> github.com/DicoderCn/ginp.RegisterHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8083
+2025/05/11 22:04:04 ::1 POST /api/user/create 200  user_id:0 request:map[] respond:map[code:1 data:0x140001c1770 msg:success]
+[GIN] 2025/05/11 - 22:04:04 | 200 |   67.919209ms |             ::1 | POST     "/api/user/create?avatar_url="

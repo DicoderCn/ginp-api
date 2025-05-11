@@ -20,7 +20,7 @@ type User struct {
 	Phone           string    `gorm:"column:phone;comment:手机号" json:"phone,omitempty"`
 	Points          uint      `gorm:"default:0;column:points;comment:积分" json:"points,omitempty"` //积分
 	HuaweiPushToken string    `gorm:"column:huawei_push_token;comment:华为推送token" json:"huawei_push_token,omitempty"`
-	VipEndAt        time.Time `gorm:"column:vip_end_at;comment:vip到期时间" json:"vip_end_at,omitempty"`
+	VipEndAt        time.Time `gorm:"column:vip_end_at;comment:vip到期时间;default:'1970-01-01 00:00:00'" json:"vip_end_at,omitempty"`
 	VipPermanent    bool      `gorm:"column:vip_permanent;comment:是否为永久VIP" json:"vip_permanent,omitempty"`
 	IsCancel        bool      `gorm:"column:is_cancel;comment:是否已注销" json:"is_cancel,omitempty"` //软注销
 	CreatedAt       time.Time `json:"created_at,omitempty"`
