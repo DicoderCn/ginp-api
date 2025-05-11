@@ -9,33 +9,19 @@ import (
 )
 
 const (
-	ApiFindById = "/api/user/findById"
-	ApiSearch   = "/api/user/search"
-	ApiCreate   = "/api/user/create"
-	ApiUpdate   = "/api/user/update"
-	ApiDelete   = "/api/user/delete"
+	ApiUserCreate   = "/api/user/create"
+	ApiUserFindById = "/api/user/findById"
+	ApiUserSearch   = "/api/user/search"
+	ApiUserUpdate   = "/api/user/update"
+	ApiUserDelete   = "/api/user/delete"
 )
 
 // this is router define file
 func init() {
-	// FindById
-	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiFindById,                               //api路径
-		Handlers:       ginp.RegisterHandler(controller.FindByID), //对应控制器
-		HttpType:       ginp.HttpPost,                             //http请求类型
-		NeedLogin:      false,                                     //是否需要登录
-		NeedPermission: false,                                     //是否需要鉴权
-		PermissionName: "User.findById",                           //完整的权限名称,会跟权限表匹配
-		Swagger: &ginp.SwaggerInfo{
-			Title:       "find user by id",
-			Description: "",
-			RequestDto:  entity.User{},
-		},
-	})
 
 	// Create
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiCreate,                               //api路径
+		Path:           ApiUserCreate,                           //api路径
 		Handlers:       ginp.RegisterHandler(controller.Create), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      false,                                   //是否需要登录
@@ -48,9 +34,24 @@ func init() {
 		},
 	})
 
+	// FindById
+	ginp.RouterAppend(ginp.RouterItem{
+		Path:           ApiUserFindById,                           //api路径
+		Handlers:       ginp.RegisterHandler(controller.FindByID), //对应控制器
+		HttpType:       ginp.HttpPost,                             //http请求类型
+		NeedLogin:      false,                                     //是否需要登录
+		NeedPermission: false,                                     //是否需要鉴权
+		PermissionName: "User.findById",                           //完整的权限名称,会跟权限表匹配
+		Swagger: &ginp.SwaggerInfo{
+			Title:       "find user by id",
+			Description: "",
+			RequestDto:  entity.User{},
+		},
+	})
+
 	// 修改
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiUpdate,                               //api路径
+		Path:           ApiUserUpdate,                           //api路径
 		Handlers:       ginp.RegisterHandler(controller.Update), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
@@ -65,7 +66,7 @@ func init() {
 
 	// 删除
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiDelete,                               //api路径
+		Path:           ApiUserDelete,                           //api路径
 		Handlers:       ginp.RegisterHandler(controller.Delete), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
@@ -80,7 +81,7 @@ func init() {
 
 	// search 搜索
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiSearch,                               //api路径
+		Path:           ApiUserSearch,                           //api路径
 		Handlers:       ginp.RegisterHandler(controller.Search), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
