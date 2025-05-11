@@ -1,8 +1,8 @@
 mysql:
-    dbname: ""
+    dbname: "z_test"
     ip: 127.0.0.1
     port: "3306"
-    pwd: "123456"
+    pwd: "zhangdi2019"
     user: root
 server:
     port: "8083"
