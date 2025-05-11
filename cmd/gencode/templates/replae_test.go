@@ -11,10 +11,10 @@ import (
 func TestReplace(t *testing.T) {
 
 	demoLineName := "user"
-
+	demoBigName := "User"
 	replaceData := map[string]string{
 		demoLineName: desc.ReplaceLineName,
-		"User":       desc.ReplaceEntityName,
+		demoBigName:  desc.ReplaceEntityName,
 	}
 
 	//1.开始生成：entity文件

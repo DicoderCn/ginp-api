@@ -5,6 +5,8 @@ import "ginp-api/internal/gen"
 const (
 	ReplaceEntityName = "$ENTITY_NAME$"
 	ReplaceLineName   = "$ENTITY_LINE$"
+	//全小写命名
+	ReplaceAllSmall = "$ENTITY_ALL_SMALL$"
 )
 
 // 基础替换数据 传入大驼峰如 UserGroup

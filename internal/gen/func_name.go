@@ -70,3 +70,9 @@ func NameToCameBig(line string) string {
 
 	return string(camel)
 }
+
+// 全小写命名
+func NameToAllSmall(line string) string {
+	lineName := NameToLine(line)
+	return strings.ReplaceAll(lineName, "_", "")
+}
