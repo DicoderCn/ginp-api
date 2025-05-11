@@ -9,11 +9,13 @@ import (
 // 快速将现有的文件做成模板文件
 func TestReplace(t *testing.T) {
 
-	demoLineName := "user"
-	demoBigName := "User"
+	demoLineName := "demo_table"
+	demoBigName := "DemoTable"
+	demoPackageName := "demotable"
 	replaceData := map[string]string{
-		demoLineName: desc.ReplaceLineName,
-		demoBigName:  desc.ReplaceEntityName,
+		demoLineName:    desc.ReplaceLineName,
+		demoBigName:     desc.ReplaceEntityName,
+		demoPackageName: desc.ReplacePackageName,
 	}
 
 	//1.开始生成：entity文件
