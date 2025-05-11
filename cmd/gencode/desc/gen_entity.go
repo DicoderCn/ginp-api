@@ -16,15 +16,29 @@ func GenEntity() {
 	}
 	lineName := gen.NameToLine(entityName)
 	replaceData := getBaseReplaceMap(entityName)
-	//开始生成
-	templatePath := filepath.Join(GetDirTemplate(), "entity.tmpl")
-	outputFilePath := filepath.Join(GetDirEntidy(), lineName+".e.go")
-	// fmt.Printf("templatePath: %v\n", templatePath)
-	// fmt.Printf("outputFilePath: %v\n", outputFilePath)
 
-	gen.ReplaceAndWriteTemplate(
-		templatePath,
-		outputFilePath,
-		replaceData,
-	)
+	//1.开始生成：entity文件
+	tPathEntity := filepath.Join(GetDirTemplate(), "entity.tmpl")
+	oPathEntity := filepath.Join(GetDirEntidy(), lineName+".e.go")
+	gen.ReplaceAndWriteTemplate(tPathEntity, oPathEntity, replaceData)
+
+	//2.开始生成：router文件
+	tPathRouter := filepath.Join(GetDirTemplate(), "router.tmpl")
+	oPathRouter := filepath.Join(GetDirRouter(), lineName+".r.go")
+	gen.ReplaceAndWriteTemplate(tPathRouter, oPathRouter, replaceData)
+
+	//3.开始生成：controller文件
+	tPathController := filepath.Join(GetDirTemplate(), "controller.tmpl")
+	oPathController := filepath.Join(GetDirController(), lineName+".c.go")
+	gen.ReplaceAndWriteTemplate(tPathController, oPathController, replaceData)
+
+	//4.开始生成：service文件
+	tPathService := filepath.Join(GetDirTemplate(), "service.tmpl")
+	oPathService := filepath.Join(GetDirService(), lineName+".s.go")
+	gen.ReplaceAndWriteTemplate(tPathService, oPathService, replaceData)
+
+	//5.开始生成：repository文件
+	tPathRepository := filepath.Join(GetDirTemplate(), "repository.tmpl")
+	oPathRepository := filepath.Join(GetDirRepository(), lineName+".p.go")
+	gen.ReplaceAndWriteTemplate(tPathRepository, oPathRepository, replaceData)
 }

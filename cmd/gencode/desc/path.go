@@ -37,6 +37,9 @@ func GetDirGencode() string {
 func GetDirTemplate() string {
 	return filepath.Join(GetDirGencode(), "templates")
 }
+func GetDirRouter() string {
+	return filepath.Join(GetDirAPP(), "router")
+}
 
 func GetDirEntidy() string {
 	return filepath.Join(GetDirAPP(), "entity")

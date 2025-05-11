@@ -1,0 +1,17 @@
+package service
+
+import (
+	"ginp-api/internal/app/gapi/repository"
+	"ginp-api/internal/db/mysql"
+)
+
+var $ENTITY_NAME$ *repository.Db$ENTITY_NAME$
+
+func Db$ENTITY_NAME$() *repository.Db$ENTITY_NAME$ {
+	if $ENTITY_NAME$ == nil {
+		dbRead := mysql.GetReadDb()
+		dbWrite := mysql.GetWriteDb()
+		$ENTITY_NAME$ = repository.NewDb$ENTITY_NAME$(dbRead, dbWrite)
+	}
+	return $ENTITY_NAME$
+}

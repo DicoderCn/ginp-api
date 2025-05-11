@@ -1,8 +1,7 @@
 package desc
 
-const InputGenType = `1. 创建实体
-2. 根据实体生成CRUD代码
-3. 新增1个API接口
+const InputGenType = `1. 创建1一个实体并生成CRUD代码(Create A Entity And Generate CRUD Code)
+2. 重新生成所有实体的CRUD代码(Re-generate all entity CRUD code)
 请回复数字选择生成类型：
 `
 
