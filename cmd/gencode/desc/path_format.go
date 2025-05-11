@@ -9,7 +9,7 @@ import (
 func PathController(lineName string) string {
 	lineName = gen.NameToLine(lineName)
 	baseName := gen.NameToLine(lineName)
-	return filepath.Join(GetDirController(), "c"+baseName, baseName+".c.go")
+	return filepath.Join(GetDirController(), "c"+baseName, lineName+".c.go")
 }
 
 // 组装 service 路径
