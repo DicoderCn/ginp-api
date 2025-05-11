@@ -1,7 +1,7 @@
 package router
 
 import (
-	"ginp-api/internal/app/gapi/controller/c$ENTITY_LINE$"
+	"ginp-api/internal/app/gapi/controller/c$ENTITY_ALL_SMALL$"
 	"ginp-api/internal/app/gapi/dto/comdto"
 	"ginp-api/internal/app/gapi/entity"
 
@@ -22,7 +22,7 @@ func init() {
 	// Create
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           Api$ENTITY_NAME$Create,                           //api路径
-		Handlers:       ginp.RegisterHandler(c$ENTITY_LINE$.Create), //对应控制器
+		Handlers:       ginp.RegisterHandler(c$ENTITY_ALL_SMALL$.Create), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      false,                                   //是否需要登录
 		NeedPermission: false,                                   //是否需要鉴权
@@ -37,7 +37,7 @@ func init() {
 	// FindById
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           Api$ENTITY_NAME$FindById,                           //api路径
-		Handlers:       ginp.RegisterHandler(c$ENTITY_LINE$.FindByID), //对应控制器
+		Handlers:       ginp.RegisterHandler(c$ENTITY_ALL_SMALL$.FindByID), //对应控制器
 		HttpType:       ginp.HttpPost,                             //http请求类型
 		NeedLogin:      false,                                     //是否需要登录
 		NeedPermission: false,                                     //是否需要鉴权
@@ -52,7 +52,7 @@ func init() {
 	// 修改
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           Api$ENTITY_NAME$Update,                           //api路径
-		Handlers:       ginp.RegisterHandler(c$ENTITY_LINE$.Update), //对应控制器
+		Handlers:       ginp.RegisterHandler(c$ENTITY_ALL_SMALL$.Update), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
 		NeedPermission: true,                                    //是否需要鉴权
@@ -67,7 +67,7 @@ func init() {
 	// 删除
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           Api$ENTITY_NAME$Delete,                           //api路径
-		Handlers:       ginp.RegisterHandler(c$ENTITY_LINE$.Delete), //对应控制器
+		Handlers:       ginp.RegisterHandler(c$ENTITY_ALL_SMALL$.Delete), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
 		NeedPermission: true,                                    //是否需要鉴权
@@ -82,7 +82,7 @@ func init() {
 	// search 搜索
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           Api$ENTITY_NAME$Search,                           //api路径
-		Handlers:       ginp.RegisterHandler(c$ENTITY_LINE$.Search), //对应控制器
+		Handlers:       ginp.RegisterHandler(c$ENTITY_ALL_SMALL$.Search), //对应控制器
 		HttpType:       ginp.HttpPost,                           //http请求类型
 		NeedLogin:      true,                                    //是否需要登录
 		NeedPermission: true,                                    //是否需要鉴权
