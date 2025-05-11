@@ -6,7 +6,7 @@ const (
 	ReplaceEntityName = "$ENTITY_NAME$"
 	ReplaceLineName   = "$ENTITY_LINE$"
 	//全小写命名
-	ReplaceAllSmall = "$ENTITY_ALL_SMALL$"
+	ReplaceAllSmall = "$PACKAGE_NAME$"
 )
 
 // 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group
