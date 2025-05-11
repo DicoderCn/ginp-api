@@ -9,7 +9,7 @@ const (
 	ReplaceAllSmall = "$ENTITY_ALL_SMALL$"
 )
 
-// 基础替换数据 传入大驼峰如 UserGroup
+// 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group
 func getBaseReplaceMap(BigCameName string) map[string]string {
 	BigCameName = gen.NameToCameBig(BigCameName)
 	lineName := gen.NameToLine(BigCameName)
