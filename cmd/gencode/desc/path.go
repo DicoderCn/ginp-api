@@ -52,8 +52,8 @@ func GetDirController() string {
 func GetDirService() string {
 	return filepath.Join(GetDirAPP(), "service")
 }
-func GetDirRepository() string {
-	return filepath.Join(GetDirAPP(), "repository")
+func GetDirModel() string {
+	return filepath.Join(GetDirAPP(), "model")
 }
 
 // 组装 controller 路径
@@ -71,7 +71,7 @@ func PathService(lineName string) string {
 // 组装 model 路径
 func PathModel(lineName string) string {
 	lineName = gen.NameToLine(lineName)
-	return filepath.Join(GetDirRepository(), "m"+lineName, lineName+".m.go")
+	return filepath.Join(GetDirModel(), "m"+lineName, lineName+".m.go")
 }
 
 // 模板路径 entity
