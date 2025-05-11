@@ -1,17 +1,9 @@
 package cuser
 
-const ApiUserSearch = "/api/user/search"
-const ApiUserCreate = "/api/user/create"
-const ApiUserUpdate = "/api/user/update"
-const ApiUserDelete = "/api/user/delete"
-
-// 导入
-const ApiUserImport = "/api/user/import"
-
-// 导入模板
-const ApiUserImportTemplateFile = "/api/user/import_template_file"
-
-// 导出
-const ApiUserExport = "/api/user/export"
+const ApiFindById = "/api/user/findById"
+const ApiSearch = "/api/user/search"
+const ApiCreate = "/api/user/create"
+const ApiUpdate = "/api/user/update"
+const ApiDelete = "/api/user/delete"
 
 //{{append}}

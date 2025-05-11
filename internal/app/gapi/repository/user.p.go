@@ -51,6 +51,10 @@ func (s *DbUser) FindOne(wheres []*where.Condition) (*entity.User, error) {
 	return entityInfo, nil
 }
 
+func (s *DbUser) FindOneById(id uint) (*entity.User, error) {
+	return s.FindOne(where.New("id", "=", id).Conditions())
+}
+
 // FindList 查询列表数据
 func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*entity.User, uint, error) {
 
@@ -95,6 +99,16 @@ func (s *DbUser) Update(wheres []*where.Condition, dtoUpdate *entity.User, colum
 func (s *DbUser) Delete(wheres []*where.Condition) error {
 	err := dbops.Delete(&dbops.DeleteConfig{
 		Wheres:     wheres,
+		Db:         s.dbWrite,
+		SoftDelete: false,
+		NewEntity:  new(entity.User),
+	})
+	return err
+}
+
+func (s *DbUser) DeleteById(id uint) error {
+	err := dbops.Delete(&dbops.DeleteConfig{
+		Wheres:     where.New("id", "=", id).Conditions(),
 		Db:         s.dbWrite,
 		SoftDelete: false,
 		NewEntity:  new(entity.User),
