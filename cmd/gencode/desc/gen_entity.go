@@ -41,4 +41,5 @@ func GenEntity() {
 	tPathRepository := filepath.Join(GetDirTemplate(), "repository.tmpl")
 	oPathRepository := filepath.Join(GetDirRepository(), lineName+".p.go")
 	gen.ReplaceAndWriteTemplate(tPathRepository, oPathRepository, replaceData)
+
 }

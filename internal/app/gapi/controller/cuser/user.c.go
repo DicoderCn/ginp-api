@@ -1,9 +1,9 @@
-package controller
+package cuser
 
 import (
 	"ginp-api/internal/app/gapi/dto/comdto"
 	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service"
+	"ginp-api/internal/app/gapi/service/suser"
 	"ginp-api/pkg/where"
 
 	"github.com/DicoderCn/ginp"
@@ -15,7 +15,7 @@ func FindByID(ctx *ginp.ContextPlus) {
 		ctx.FailData("请求参数有误" + err.Error())
 		return
 	}
-	info, err := service.DbUser().FindOneById(params.ID)
+	info, err := suser.Model().FindOneById(params.ID)
 	if err != nil {
 		ctx.FailData(err.Error())
 		return
@@ -30,7 +30,7 @@ func Create(ctx *ginp.ContextPlus) {
 		return
 	}
 	//也可以自己创建并传入读写db: tables.NewUser(wdb,rdb)
-	info, err := service.DbUser().Create(params)
+	info, err := suser.Model().Create(params)
 	if err != nil {
 		ctx.FailData("创建失败" + err.Error())
 		return
@@ -46,7 +46,7 @@ func Update(ctx *ginp.ContextPlus) {
 	}
 	wheres := where.Format(where.OptEqual("id", params.ID))
 	//也可以自己创建并传入读写db: tables.NewUser(wdb,rdb)
-	err := service.DbUser().Update(wheres, params)
+	err := suser.Model().Update(wheres, params)
 	if err != nil {
 		ctx.FailData("修改失败" + err.Error())
 		return
@@ -62,7 +62,7 @@ func Delete(ctx *ginp.ContextPlus) {
 	}
 
 	//也可以自己创建并传入读写db: tables.NewUser(wdb,rdb)
-	err := service.DbUser().DeleteById(params.ID)
+	err := suser.Model().DeleteById(params.ID)
 	if err != nil {
 		ctx.FailData("删除失败" + err.Error())
 		return
@@ -78,7 +78,7 @@ func Search(ctx *ginp.ContextPlus) {
 		return
 	}
 	//也可以自己创建并传入读写db: tables.NewUser(wdb,rdb)
-	list, total, err := service.DbUser().FindList(params.Wheres, params.Extra)
+	list, total, err := suser.Model().FindList(params.Wheres, params.Extra)
 	if err != nil {
 		ctx.FailData("查询失败" + err.Error())
 		return

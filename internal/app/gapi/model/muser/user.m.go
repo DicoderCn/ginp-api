@@ -1,4 +1,4 @@
-package repository
+package muser
 
 import (
 	"fmt"
@@ -9,20 +9,20 @@ import (
 	"gorm.io/gorm"
 )
 
-type DbUser struct {
+type Model struct {
 	dbWrite *gorm.DB
 	dbRead  *gorm.DB
 }
 
-func NewDbUser(dbWrite_, dbRead_ *gorm.DB) *DbUser {
-	return &DbUser{
+func NewModel(dbWrite_, dbRead_ *gorm.DB) *Model {
+	return &Model{
 		dbWrite: dbWrite_,
 		dbRead:  dbRead_,
 	}
 }
 
 // Create 创建数据
-func (s *DbUser) Create(dtoCreate *entity.User) (*entity.User, error) {
+func (s *Model) Create(dtoCreate *entity.User) (*entity.User, error) {
 	err := dbops.Create(dtoCreate, s.dbWrite)
 	if err != nil {
 		return nil, err
@@ -35,7 +35,7 @@ func (s *DbUser) Create(dtoCreate *entity.User) (*entity.User, error) {
 }
 
 // FindOne 查询一条数据
-func (s *DbUser) FindOne(wheres []*where.Condition) (*entity.User, error) {
+func (s *Model) FindOne(wheres []*where.Condition) (*entity.User, error) {
 	entityInfo := new(entity.User)
 	err := dbops.FindOne(&dbops.FindOneConfig{
 		Wheres:    wheres,
@@ -51,12 +51,12 @@ func (s *DbUser) FindOne(wheres []*where.Condition) (*entity.User, error) {
 	return entityInfo, nil
 }
 
-func (s *DbUser) FindOneById(id uint) (*entity.User, error) {
+func (s *Model) FindOneById(id uint) (*entity.User, error) {
 	return s.FindOne(where.New("id", "=", id).Conditions())
 }
 
 // FindList 查询列表数据
-func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*entity.User, uint, error) {
+func (s *Model) FindList(wheres []*where.Condition, extra *where.Extra) ([]*entity.User, uint, error) {
 
 	var entityList []*entity.User
 	//传入的entityList必须要加 &取地址符号，切片本身并不是指针，向函数传递一个切片时，实际上是复制了该切片的结构体
@@ -83,7 +83,7 @@ func (s *DbUser) FindList(wheres []*where.Condition, extra *where.Extra) ([]*ent
 }
 
 // Update 更新数据
-func (s *DbUser) Update(wheres []*where.Condition, dtoUpdate *entity.User, columnsCfg ...string) error {
+func (s *Model) Update(wheres []*where.Condition, dtoUpdate *entity.User, columnsCfg ...string) error {
 	// dbops.UpdateWithDb(wheres, new(entity.User), dtoUpdate, s.dbWrite, columnsCfg...)
 	err := dbops.Update(&dbops.UpdateConfNew{
 		Wheres:           wheres,
@@ -96,7 +96,7 @@ func (s *DbUser) Update(wheres []*where.Condition, dtoUpdate *entity.User, colum
 }
 
 // Delete 删除数据
-func (s *DbUser) Delete(wheres []*where.Condition) error {
+func (s *Model) Delete(wheres []*where.Condition) error {
 	err := dbops.Delete(&dbops.DeleteConfig{
 		Wheres:     wheres,
 		Db:         s.dbWrite,
@@ -106,7 +106,7 @@ func (s *DbUser) Delete(wheres []*where.Condition) error {
 	return err
 }
 
-func (s *DbUser) DeleteById(id uint) error {
+func (s *Model) DeleteById(id uint) error {
 	err := dbops.Delete(&dbops.DeleteConfig{
 		Wheres:     where.New("id", "=", id).Conditions(),
 		Db:         s.dbWrite,
@@ -117,7 +117,7 @@ func (s *DbUser) DeleteById(id uint) error {
 }
 
 // GetTotal 获取总数
-func (s *DbUser) GetTotal(wheres []*where.Condition) (int64, error) {
+func (s *Model) GetTotal(wheres []*where.Condition) (int64, error) {
 	total, err := dbops.GetTotal(wheres, new(entity.User), s.dbRead)
 	return total, err
 }

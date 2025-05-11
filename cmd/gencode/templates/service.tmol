@@ -1,4 +1,4 @@
-package service
+package s$ENTITY_LINE$
 
 import (
 	"ginp-api/internal/app/gapi/repository"

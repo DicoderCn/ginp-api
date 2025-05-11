@@ -3,7 +3,7 @@ package controller
 import (
 	"ginp-api/internal/app/gapi/dto/comdto"
 	"ginp-api/internal/app/gapi/entity"
-	"ginp-api/internal/app/gapi/service"
+	"ginp-api/internal/app/gapi/service/s$ENTITY_LINE$"
 	"ginp-api/pkg/where"
 
 	"github.com/DicoderCn/ginp"
@@ -15,7 +15,7 @@ func FindByID(c *ginp.ContextPlus) {
 		c.FailData("请求参数有误" + err.Error())
 		return
 	}
-	info, err := service.Db$ENTITY_NAME$().FindOneById(params.ID)
+	info, err := s$ENTITY_LINE$.Db()FindOneById(params.ID)
 	if err != nil {
 		c.FailData(err.Error())
 		return
@@ -30,7 +30,7 @@ func Create(c *ginp.ContextPlus) {
 		return
 	}
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	info, err := service.Db$ENTITY_NAME$().Create(params)
+	info, err := s$ENTITY_LINE$.Db()Create(params)
 	if err != nil {
 		c.FailData("创建失败" + err.Error())
 		return
@@ -46,7 +46,7 @@ func Update(c *ginp.ContextPlus) {
 	}
 	wheres := where.Format(where.OptEqual("id", params.ID))
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := service.Db$ENTITY_NAME$().Update(wheres, params)
+	err := s$ENTITY_LINE$.Db()Update(wheres, params)
 	if err != nil {
 		c.FailData("修改失败" + err.Error())
 		return
@@ -62,7 +62,7 @@ func Delete(c *ginp.ContextPlus) {
 	}
 
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	err := service.Db$ENTITY_NAME$().DeleteById(params.ID)
+	err := s$ENTITY_LINE$.Db()DeleteById(params.ID)
 	if err != nil {
 		c.FailData("删除失败" + err.Error())
 		return
@@ -78,7 +78,7 @@ func Search(c *ginp.ContextPlus) {
 		return
 	}
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
-	list, total, err := service.Db$ENTITY_NAME$().FindList(params.Wheres, params.Extra)
+	list, total, err := s$ENTITY_LINE$.Db()FindList(params.Wheres, params.Extra)
 	if err != nil {
 		c.FailData("查询失败" + err.Error())
 		return
