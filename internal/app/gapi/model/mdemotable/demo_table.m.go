@@ -52,7 +52,7 @@ func (s *Model) FindOne(wheres []*where.Condition) (*entity.DemoTable, error) {
 }
 
 func (s *Model) FindOneById(id uint) (*entity.DemoTable, error) {
-	return s.FindOne(where.New("id", "=", id).Conditions())
+	return s.FindOne(where.New(FieldID, "=", id).Conditions())
 }
 
 // FindList 查询列表数据
