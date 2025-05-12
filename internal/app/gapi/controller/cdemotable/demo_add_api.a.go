@@ -16,16 +16,13 @@ func DemoAddApi(c *ginp.ContextPlus) {
 
 const ApiDemoAddApi = "/api/demo_table/demo_add_api" //API Path
 
-// request struct
 type RequestDemoAddApi struct {
 }
 
-// response struct
 type RespondDemoAddApi struct {
 }
 
 func init() {
-	// register api router
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:           ApiCreate,                    //api路径
 		Handlers:       ginp.RegisterHandler(Create), //对应控制器
@@ -34,7 +31,7 @@ func init() {
 		NeedPermission: false,                        //是否需要鉴权
 		PermissionName: "DemoTable.create",           //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
-			Title:       "create demo_table",
+			Title:       "demo_add_api",
 			Description: "",
 			RequestDto:  RequestDemoAddApi{},
 		},
