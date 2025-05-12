@@ -7,6 +7,9 @@ const (
 	ReplaceLineName   = "$ENTITY_LINE$"
 	//全小写命名
 	ReplacePackageName = "$PACKAGE_NAME$"
+
+	PlaceholderRouterImport = "{{placeholder_router_import}}"
+	RouterReplaceStr        = `_ "ginp-api/internal/app/gapi/controller/c`
 )
 
 // 基础替换数据 传入大驼峰如 $ENTITY_NAME$Group
