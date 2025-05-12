@@ -6,7 +6,7 @@ import (
 	"github.com/DicoderCn/ginp"
 )
 
-func InitRouter() {
+func init() {
 	// this is view
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:      "/",                                    //api路径

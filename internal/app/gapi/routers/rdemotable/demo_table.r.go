@@ -17,7 +17,7 @@ const (
 )
 
 // this is router define file
-func InitRouter() {
+func init() {
 
 	// Create
 	ginp.RouterAppend(ginp.RouterItem{
