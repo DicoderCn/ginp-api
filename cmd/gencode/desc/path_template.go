@@ -31,3 +31,8 @@ func TemplatePathModel() string {
 func TemplatePathFields() string {
 	return filepath.Join(GetDirTemplate(), "fields.tmpl")
 }
+
+// 模板路径 add api
+func TemplatePathAddApi() string {
+	return filepath.Join(GetDirTemplate(), "addapi.tmpl")
+}

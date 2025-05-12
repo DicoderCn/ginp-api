@@ -1,0 +1,42 @@
+package c$PACKAGE_NAME$
+
+import (
+	"github.com/DicoderCn/ginp"
+)
+
+func $API_NAME_BIG$(c *ginp.ContextPlus) {
+	var requestParams *Request$API_NAME_BIG$
+	if err := c.ShouldBindJSON(&requestParams); err != nil {
+		c.FailData("request param error:" + err.Error())
+		return
+	}
+	//TODO: your code here
+	//c.SuccessData(&Respond$API_NAME_BIG${})
+}
+
+const Api$API_NAME_BIG$ = "/api/demo_table/$API_NAME_LINE$" //API Path
+
+// request struct
+type Request$API_NAME_BIG$ struct {
+}
+
+// response struct
+type Respond$API_NAME_BIG$ struct {
+}
+
+func init() {
+	// register api router
+	ginp.RouterAppend(ginp.RouterItem{
+		Path:           ApiCreate,                    //api路径
+		Handlers:       ginp.RegisterHandler(Create), //对应控制器
+		HttpType:       ginp.HttpPost,                //http请求类型
+		NeedLogin:      false,                        //是否需要登录
+		NeedPermission: false,                        //是否需要鉴权
+		PermissionName: "DemoTable.create",           //完整的权限名称,会跟权限表匹配
+		Swagger: &ginp.SwaggerInfo{
+			Title:       "$API_NAME_LINE$",
+			Description: "",
+			RequestDto:  Request$API_NAME_BIG${},
+		},
+	})
+}

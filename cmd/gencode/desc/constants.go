@@ -6,8 +6,9 @@ const (
 	ReplaceEntityName = "$ENTITY_NAME$"
 	ReplaceLineName   = "$ENTITY_LINE$"
 	//全小写命名
-	ReplacePackageName = "$PACKAGE_NAME$"
-
+	ReplacePackageName      = "$PACKAGE_NAME$"
+	ReplaceApiNameBig       = "$API_NAME_BIG$"
+	ReplaceApiNameLine      = "$API_NAME_LINE$"
 	PlaceholderRouterImport = "//{{placeholder_router_import}}//"
 	RouterReplaceStr        = `_ "ginp-api/internal/app/gapi/controller/c`
 )

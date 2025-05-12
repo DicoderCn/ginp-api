@@ -15,7 +15,7 @@ func main() {
 	case "2":
 		desc.GenFields()
 	case "3":
-
+		desc.GenAddApi()
 	default:
 		println("输入错误")
 	}
