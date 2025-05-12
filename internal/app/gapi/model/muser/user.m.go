@@ -108,7 +108,7 @@ func (s *Model) Delete(wheres []*where.Condition) error {
 
 func (s *Model) DeleteById(id uint) error {
 	err := dbops.Delete(&dbops.DeleteConfig{
-		Wheres:     where.New("id", "=", id).Conditions(),
+		Wheres:     where.New(FieldID, "=", id).Conditions(),
 		Db:         s.dbWrite,
 		SoftDelete: false,
 		NewEntity:  new(entity.User),
