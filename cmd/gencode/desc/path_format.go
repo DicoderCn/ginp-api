@@ -59,6 +59,6 @@ func PathEntity(lineName string) string {
 func PathAddApi(lineName string, apiNameLine string) string {
 	lineName = gen.NameToLine(lineName)
 	apiNameLine = gen.NameToLine(apiNameLine)
-	allSmallName := gen.NameToAllSmall(lineName)
-	return filepath.Join(GetDirController(), "c"+allSmallName, apiNameLine+".a.go")
+	entityAllSmallName := gen.NameToAllSmall(lineName)
+	return filepath.Join(GetDirController(), "c"+entityAllSmallName, apiNameLine+".a.go")
 }
