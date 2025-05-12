@@ -20,7 +20,7 @@ func AddImportRouterPackage(lineName string) {
 		return
 	}
 
-	placeHolder := `//{{placeholder}}//` + packgeName
+	placeHolder := `//{{placeholder}}//`
 	importStr := `_ "ginp-api/internal/app/gapi/routers/"` + packgeName
 
 	newContent := strings.Replace(content, placeHolder, importStr+"\n"+placeHolder, -1)
