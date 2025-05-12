@@ -28,6 +28,7 @@ func PathModel(lineName string) string {
 
 // 组装 fields 路径,放在model所在的目录下
 func PathFields(lineName string) string {
+	lineName = gen.NameToLine(lineName)
 	dir := filepath.Dir(PathModel(lineName))
 	return filepath.Join(dir, lineName+".f.go")
 }
