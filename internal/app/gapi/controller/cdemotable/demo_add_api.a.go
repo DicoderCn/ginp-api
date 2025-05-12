@@ -10,6 +10,7 @@ func DemoAddApi(c *ginp.ContextPlus) {
 		c.FailData("request param error:" + err.Error())
 		return
 	}
+
 	//TODO: your code here
 
 	//c.SuccessData(&RespondDemoAddApi{})
@@ -30,7 +31,7 @@ func init() {
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      false,                        //是否需要登录
 		NeedPermission: false,                        //是否需要鉴权
-		PermissionName: "DemoTable.create",           //完整的权限名称,会跟权限表匹配
+		PermissionName: "DemoTable.demo_add_api",     //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
 			Title:       "demo_add_api",
 			Description: "",
