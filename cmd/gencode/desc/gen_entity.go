@@ -42,4 +42,8 @@ func GenEntity() {
 	oPathRepository := PathModel(lineName)
 	gen.ReplaceAndWriteTemplate(tPathRepository, oPathRepository, replaceData)
 
+	//6.开始生成：fields文件（先生成默认字段 后续修改实体字段需要重新生成字段常量）
+	tPathFields := TemplatePathFields()
+	oPathFields := PathFields(lineName)
+	gen.ReplaceAndWriteTemplate(tPathFields, oPathFields, replaceData)
 }

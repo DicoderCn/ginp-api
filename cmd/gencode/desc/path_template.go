@@ -26,3 +26,8 @@ func TemplatePathService() string {
 func TemplatePathModel() string {
 	return filepath.Join(GetDirTemplate(), "model.tmpl")
 }
+
+// 模板路径 fields
+func TemplatePathFields() string {
+	return filepath.Join(GetDirTemplate(), "fields.tmpl")
+}
