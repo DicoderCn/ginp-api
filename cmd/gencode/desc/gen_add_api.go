@@ -5,7 +5,6 @@ import (
 	"ginp-api/internal/gen"
 	"os"
 	"path/filepath"
-	"sort"
 	"strconv"
 	"strings"
 )
@@ -20,9 +19,9 @@ func GenAddApi() {
 	folderMap := getControllerDirs(controllerDir)
 
 	//选择Api创建目录
-	apiDir := InputApiDir(folderMap)
+	selectDirName := InputApiDir(folderMap)
 
-	// apiDir := filepath.Join(controllerDir, selectDirName)
+	apiDir := filepath.Join(controllerDir, selectDirName)
 
 	//获取实体名称
 	entityLineName := getEntityLineName(apiDir)
@@ -50,9 +49,9 @@ func GenAddApi() {
 
 }
 
-func getControllerDirs(controllerDir string) map[string]string {
+func getControllerDirs(controllerDir string) []string {
 	// 创建map用于存储目录名和路径的映射
-	folderMap := make(map[string]string)
+	folderList := make([]string, 0)
 
 	// 读取controller目录下的所有文件和子目录
 	dirs, err := os.ReadDir(controllerDir)
@@ -61,31 +60,24 @@ func getControllerDirs(controllerDir string) map[string]string {
 	}
 
 	// 遍历目录项，只处理子目录
+	// index := 1
 	for _, dir := range dirs {
 		if dir.IsDir() {
 			// 将目录名和完整路径存入map
-			folderMap[dir.Name()] = filepath.Join(controllerDir, dir.Name())
+			folderList = append(folderList, dir.Name())
+			// folderMap[fmt.Sprintf("%v", index)] = dir.Name()
 		}
 	}
 
 	// 打印所有目录名和路径
-	index := 1
-	for k := range folderMap {
-		fmt.Printf("%d.%s\n", index, k)
-		index++
+	for i, name := range folderList {
+		fmt.Printf("%d.%s\n", i+1, name)
 	}
 
-	return folderMap
+	return folderList
 }
 
-func InputApiDir(folderMap map[string]string) string {
-	// 创建有序的key列表
-	keys := make([]string, 0, len(folderMap))
-	for k := range folderMap {
-		keys = append(keys, k)
-	}
-	// 按字母顺序排序以确保一致性
-	sort.Strings(keys)
+func InputApiDir(folderList []string) string {
 
 	// 重新打印排序后的目录列表
 	// for i, k := range keys {
@@ -93,24 +85,21 @@ func InputApiDir(folderMap map[string]string) string {
 	// }
 
 	inputCode := gen.Input(Select3, nil)
-	// 判断输入是否为数字
-	if index, err := strconv.Atoi(inputCode); err == nil {
-		// 如果是数字，转换为对应的文件夹名
-		if index > 0 && index <= len(keys) {
-			inputCode = keys[index-1]
-		} else {
-			fmt.Println("输入的序号不在范围内，请重新输入")
-			return ""
-		}
-	}
-	//判断inputCode是否在folderMap的key中
-	if _, ok := folderMap[inputCode]; !ok {
-		fmt.Println("输入的代码不在列表中，请重新输入")
+	//转成int
+	code, err := strconv.ParseInt(inputCode, 10, 64)
+	if err != nil {
+		fmt.Println("输入的代码不是数字，请重新输入")
 		return ""
 	}
 
-	println("select dir:", folderMap[inputCode])
-	return folderMap[inputCode]
+	//判断code可取
+	if code < 1 || code > int64(len(folderList)) {
+		fmt.Println("输入的代码不在范围内，请重新输入")
+		return ""
+	}
+
+	println("select dir:", folderList[code-1])
+	return folderList[code-1]
 }
 
 func getEntityLineName(apiDir string) string {
