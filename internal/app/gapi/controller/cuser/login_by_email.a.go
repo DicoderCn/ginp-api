@@ -1,41 +1,40 @@
-package cdemotable
+package cuser
 
 import (
 	"github.com/DicoderCn/ginp"
 )
 
-func DemoAddApi(c *ginp.ContextPlus) {
-	var requestParams *RequestDemoAddApi
+func LoginByEmail(c *ginp.ContextPlus) {
+	var requestParams *RequestLoginByEmail
 	if err := c.ShouldBindJSON(&requestParams); err != nil {
 		c.FailData("request param error:" + err.Error())
 		return
 	}
 
 	//TODO:
-	//sdemotable.Model().Create(&entity.DemoTable{})
-	//c.SuccessData(&RespondDemoAddApi{})
+	//c.SuccessData(&RespondLoginByEmail{})
 }
 
-const ApiDemoAddApi = "/api/demo_table/demo_add_api" //API Path
+const ApiLoginByEmail = "/api/user/login_by_email" //API Path
 
-type RequestDemoAddApi struct {
+type RequestLoginByEmail struct {
 }
 
-type RespondDemoAddApi struct {
+type RespondLoginByEmail struct {
 }
 
 func init() {
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           ApiDemoAddApi,                //api路径
+		Path:           ApiLoginByEmail,              //api路径
 		Handlers:       ginp.RegisterHandler(Create), //对应控制器
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      false,                        //是否需要登录
 		NeedPermission: false,                        //是否需要鉴权
-		PermissionName: "DemoTable.demo_add_api",     //完整的权限名称,会跟权限表匹配
+		PermissionName: "User.login_by_email",        //完整的权限名称,会跟权限表匹配
 		Swagger: &ginp.SwaggerInfo{
-			Title:       "demo_add_api",
+			Title:       "login_by_email",
 			Description: "",
-			RequestDto:  RequestDemoAddApi{},
+			RequestDto:  RequestLoginByEmail{},
 		},
 	})
 }
