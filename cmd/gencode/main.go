@@ -13,7 +13,7 @@ func main() {
 	case "1":
 		desc.GenEntity()
 	case "2":
-
+		desc.GenFields()
 	case "3":
 
 	default:

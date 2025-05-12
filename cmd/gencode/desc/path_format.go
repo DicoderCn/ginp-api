@@ -26,6 +26,12 @@ func PathModel(lineName string) string {
 	return filepath.Join(GetDirModel(), "m"+allSmallName, lineName+".m.go")
 }
 
+// 组装 fields 路径,放在model所在的目录下
+func PathFields(lineName string) string {
+	dir := filepath.Dir(PathModel(lineName))
+	return filepath.Join(dir, lineName+".f.go")
+}
+
 // 组装路由路径 router
 func PathRouter(lineName string) string {
 	lineName = gen.NameToLine(lineName)
