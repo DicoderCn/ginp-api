@@ -8,7 +8,7 @@ const (
 	//全小写命名
 	ReplacePackageName = "$PACKAGE_NAME$"
 
-	PlaceholderRouterImport = "{{placeholder_router_import}}"
+	PlaceholderRouterImport = "//{{placeholder_router_import}}//"
 	RouterReplaceStr        = `_ "ginp-api/internal/app/gapi/controller/c`
 )
 
