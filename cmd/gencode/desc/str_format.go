@@ -21,9 +21,9 @@ func AddImportRouterPackage(lineName string) {
 	}
 
 	placeHolder := `//{{placeholder}}//`
-	importStr := `_ "ginp-api/internal/app/gapi/routers/"` + packgeName
+	importStr := `_ "ginp-api/internal/app/gapi/routers/` + packgeName + `"`
 
-	newContent := strings.Replace(content, placeHolder, importStr+"\n"+placeHolder, -1)
+	newContent := strings.Replace(content, placeHolder, importStr+"\n\t"+placeHolder, -1)
 	err = filehelper.WriteContent(PathRouterEntry(), newContent)
 	if err != nil {
 		println("outers_entry 写入失败" + err.Error())
