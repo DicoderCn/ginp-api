@@ -16,7 +16,7 @@ func GenFields() {
 		content := "package " + packageName + " \n\n"
 		for i := 0; i < t.NumField(); i++ {
 			field := t.Field(i)
-			constName := t.Name() + field.Name
+			constName := "Field" + field.Name
 			fieldName := gen.NameToLine(field.Name)
 			if fieldName == "model" { //gorm.model
 				content += fmt.Sprintf("const %s = \"%s\"\n\n", t.Name()+"ID", "id")
