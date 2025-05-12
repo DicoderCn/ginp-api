@@ -38,7 +38,7 @@ func GenAddApi() {
 	apiNameBig := gen.NameToCameBig(apiName)
 	apiNameLine := gen.NameToLine(apiNameBig)
 	//扫描apiDir下的所有文件匹配到c.go结尾的文件
-	apiPath := filepath.Join(apiDir, apiNameLine+".a.go")
+	apiPath := PathAddApi(apiNameLine, apiNameLine)
 	replaceData := getBaseReplaceMap(entityLineName)
 	replaceData[ReplaceApiNameBig] = apiNameBig                          //api名称 大驼峰
 	replaceData[ReplaceApiNameLine] = apiNameLine                        //api名称 下划线
