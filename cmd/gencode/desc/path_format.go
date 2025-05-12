@@ -44,7 +44,8 @@ func PathRouter(lineName string) string {
 func PathRouterEntry() string {
 	// lineName = gen.NameToLine(lineName)
 	// allSmallName := gen.NameToAllSmall(lineName)
-	return filepath.Join(GetDirRouter(), "routers_entry.go")
+
+	return filepath.Join(GetDirRouter(), "routers_import.go")
 }
 
 // 组装实体路径 entity
