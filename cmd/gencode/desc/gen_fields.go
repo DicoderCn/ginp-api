@@ -9,7 +9,7 @@ import (
 )
 
 func GenFields() {
-	for _, entity_ := range start.EntityAutoMigrateList {
+	for _, entity_ := range start.EntityGenerationList {
 		t := reflect.TypeOf(entity_).Elem()
 		// fileName := strings.ToLower(t.Name()) + ".go"
 		packageName := "m" + gen.NameToAllSmall(t.Name())
