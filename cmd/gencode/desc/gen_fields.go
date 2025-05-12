@@ -8,6 +8,8 @@ import (
 	"reflect"
 )
 
+// 生成实体常量 在 app/gapi/start/setting.go
+// EntityGenerationList中添加需要生成的实体
 func GenFields() {
 	for _, entity_ := range start.EntityGenerationList {
 		t := reflect.TypeOf(entity_).Elem()
