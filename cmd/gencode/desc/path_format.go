@@ -36,8 +36,15 @@ func PathFields(lineName string) string {
 // 组装路由路径 router
 func PathRouter(lineName string) string {
 	lineName = gen.NameToLine(lineName)
+	allSmallName := gen.NameToAllSmall(lineName)
+	return filepath.Join(GetDirRouters(), "r"+allSmallName, lineName+".r.go")
+}
+
+// 组装路由入口路径 routers_entry
+func PathRouterEntry() string {
+	// lineName = gen.NameToLine(lineName)
 	// allSmallName := gen.NameToAllSmall(lineName)
-	return filepath.Join(GetDirRouter(), "r."+lineName+".go")
+	return filepath.Join(GetDirRouters(), "routers_entry.go")
 }
 
 // 组装实体路径 entity

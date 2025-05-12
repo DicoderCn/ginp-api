@@ -26,6 +26,7 @@ func GenEntity() {
 	tPathRouter := TemplatePathRouter()
 	oPathRouter := PathRouter(lineName)
 	gen.ReplaceAndWriteTemplate(tPathRouter, oPathRouter, replaceData)
+	AddImportRouterPackage(lineName) //添加router导入包
 
 	//3.开始生成：controller文件
 	tPathController := TemplatePathController()

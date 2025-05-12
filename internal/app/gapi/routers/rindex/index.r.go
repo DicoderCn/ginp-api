@@ -1,4 +1,4 @@
-package router
+package rindex
 
 import (
 	"ginp-api/internal/app/gapi/controller/cindex"
@@ -6,7 +6,7 @@ import (
 	"github.com/DicoderCn/ginp"
 )
 
-func init() {
+func InitRouter() {
 	// this is view
 	ginp.RouterAppend(ginp.RouterItem{
 		Path:      "/",                                    //api路径

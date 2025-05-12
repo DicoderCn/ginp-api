@@ -1,6 +1,8 @@
 package router
 
 import (
+	"ginp-api/internal/app/gapi/routers"
+
 	"github.com/DicoderCn/ginp"
 	"github.com/gin-gonic/gin"
 )
@@ -18,7 +20,8 @@ func Register(r *gin.Engine) {
 	// r.Use(ginp.ConvHandler(permissionCheck))
 
 	//2.-----------------路由注册---------------
-	ginp.RegisterRouter(r)
+	routers.InitRouters()  //路由定义
+	ginp.RegisterRouter(r) //注册路由
 
 	//注册公共视图路由
 	//registerRouter(r, PublicViewRoutes)

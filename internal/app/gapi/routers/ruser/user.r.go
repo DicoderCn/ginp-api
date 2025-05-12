@@ -1,4 +1,4 @@
-package router
+package ruser
 
 import (
 	"ginp-api/internal/app/gapi/controller/cuser"
@@ -17,7 +17,7 @@ const (
 )
 
 // this is router define file
-func init() {
+func InitRouter() {
 
 	// Create
 	ginp.RouterAppend(ginp.RouterItem{
