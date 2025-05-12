@@ -8,11 +8,11 @@ import (
 )
 
 const (
-	Api$ENTITY_NAME$Create   = "/api/$ENTITY_LINE$/create"
-	Api$ENTITY_NAME$FindById = "/api/$ENTITY_LINE$/findById"
-	Api$ENTITY_NAME$Search   = "/api/$ENTITY_LINE$/search"
-	Api$ENTITY_NAME$Update   = "/api/$ENTITY_LINE$/update"
-	Api$ENTITY_NAME$Delete   = "/api/$ENTITY_LINE$/delete"
+	ApiCreate   = "/api/$ENTITY_LINE$/create"
+	ApiFindById = "/api/$ENTITY_LINE$/findById"
+	ApiSearch   = "/api/$ENTITY_LINE$/search"
+	ApiUpdate   = "/api/$ENTITY_LINE$/update"
+	ApiDelete   = "/api/$ENTITY_LINE$/delete"
 )
 
 // this is router define file
@@ -20,7 +20,7 @@ func init() {
 
 	// Create
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           Api$ENTITY_NAME$Create,           //api路径
+		Path:           ApiCreate,                    //api路径
 		Handlers:       ginp.RegisterHandler(Create), //对应控制器
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      false,                        //是否需要登录
@@ -35,7 +35,7 @@ func init() {
 
 	// FindById
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           Api$ENTITY_NAME$FindById,           //api路径
+		Path:           ApiFindById,                    //api路径
 		Handlers:       ginp.RegisterHandler(FindByID), //对应控制器
 		HttpType:       ginp.HttpPost,                  //http请求类型
 		NeedLogin:      false,                          //是否需要登录
@@ -50,7 +50,7 @@ func init() {
 
 	// 修改
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           Api$ENTITY_NAME$Update,           //api路径
+		Path:           ApiUpdate,                    //api路径
 		Handlers:       ginp.RegisterHandler(Update), //对应控制器
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
@@ -65,7 +65,7 @@ func init() {
 
 	// 删除
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           Api$ENTITY_NAME$Delete,           //api路径
+		Path:           ApiDelete,                    //api路径
 		Handlers:       ginp.RegisterHandler(Delete), //对应控制器
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
@@ -80,7 +80,7 @@ func init() {
 
 	// search 搜索
 	ginp.RouterAppend(ginp.RouterItem{
-		Path:           Api$ENTITY_NAME$Search,           //api路径
+		Path:           ApiSearch,                    //api路径
 		Handlers:       ginp.RegisterHandler(Search), //对应控制器
 		HttpType:       ginp.HttpPost,                //http请求类型
 		NeedLogin:      true,                         //是否需要登录
