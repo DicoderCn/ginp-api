@@ -1,8 +1,7 @@
 package desc
 
-const InputGenType = `1. 创建1一个实体并生成CRUD代码(Create A Entity And Generate CRUD Code)
-2. 重新生成所有实体的CRUD代码(Re-generate all entity CRUD code)
-请回复数字选择生成类型：
-`
+const InputGenType = `1. 创建实体并生成CRUD代码(Create A Entity And Generate CRUD Code)
+2. 生成实体字段常量(generate entity field constants)
+请回复数字选择生成类型(reply with a number to select):`
 
-const InputEntityName = `请输入实体名称：`
+const Select1 = `请输入实体名称(Please enter the entity name):`
