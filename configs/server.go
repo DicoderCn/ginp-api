@@ -3,10 +3,23 @@ package configs
 import "ginp-api/pkg/cfg"
 
 const (
-	ServerPort = "server.port"
+	ConfigKeyServerPort = "server.port"
+)
+
+const (
+	defaultServerPort = "8082"
 )
 
 // 初始化配置
 func init() {
-	cfg.SetDefault(ServerPort, "8082")
+	cfg.SetDefault(ConfigKeyServerPort, defaultServerPort)
+}
+
+// 获取服务端口
+func ServerPort() string {
+	port := cfg.GetString(ConfigKeyServerPort)
+	if port == "" {
+		return defaultServerPort
+	}
+	return port
 }

@@ -4,16 +4,15 @@ import (
 	"fmt"
 	"ginp-api/configs"
 	"ginp-api/internal/db/mysql"
-	"ginp-api/pkg/cfg"
 )
 
 func startDB() {
 	mysql.InitDb(
-		cfg.GetString(configs.ConfigKeyMysqlIp),
-		cfg.GetString(configs.ConfigKeyMysqlPort),
-		cfg.GetString(configs.ConfigKeyMysqlUser),
-		cfg.GetString(configs.ConfigKeyMysqlDb),
-		cfg.GetString(configs.ConfigKeyMysqlPwd),
+		configs.MysqlIp(),
+		configs.MysqlPort(),
+		configs.MysqlUser(),
+		configs.MysqlDb(),
+		configs.MysqlPwd(),
 	)
 
 	//迁移表

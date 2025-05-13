@@ -16,3 +16,20 @@ func init() {
 	cfg.SetDefault(ConfigKeyMysqlDb, "")
 	cfg.SetDefault(ConfigKeyMysqlPwd, "123456")
 }
+
+func MysqlIp() string {
+	return cfg.GetString(ConfigKeyMysqlIp)
+}
+func MysqlPort() string {
+	return cfg.GetString(ConfigKeyMysqlPort)
+}
+
+func MysqlUser() string {
+	return cfg.GetString(ConfigKeyMysqlUser)
+}
+func MysqlPwd() string {
+	return cfg.GetString(ConfigKeyMysqlPwd)
+}
+func MysqlDb() string {
+	return cfg.GetString(ConfigKeyMysqlDb)
+}
