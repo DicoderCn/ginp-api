@@ -36,7 +36,7 @@ require (
 )
 
 require (
-	github.com/DicoderCn/ginp v0.0.0-20250509094310-e3333621d98a
+	github.com/DicoderCn/ginp v0.0.0-20250510133553-53c8d28301c7
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/gin-gonic/gin v1.10.0
 	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
