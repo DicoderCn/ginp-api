@@ -3,6 +3,7 @@ package c$PACKAGE_NAME$
 import (
 	"github.com/DicoderCn/ginp"
 )
+const Api$API_NAME_BIG$ = "/api/$ENTITY_LINE$/$API_NAME_LINE$" //API Path
 
 func $API_NAME_BIG$(c *ginp.ContextPlus) {
 	var requestParams *Request$API_NAME_BIG$
@@ -16,7 +17,6 @@ func $API_NAME_BIG$(c *ginp.ContextPlus) {
 	//c.SuccessData(&Respond$API_NAME_BIG${})
 }
 
-const Api$API_NAME_BIG$ = "/api/$ENTITY_LINE$/$API_NAME_LINE$" //API Path
 
 type Request$API_NAME_BIG$ struct {
 }
