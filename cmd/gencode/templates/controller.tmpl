@@ -77,6 +77,11 @@ func Search(c *ginp.ContextPlus) {
 		c.FailData("request param error:" + err.Error())
 		return
 	}
+	
+	if where.Check(params.Wheres) != nil {
+		ctx.FailData(where.Check(params.Wheres))
+		return
+	}
 	//也可以自己创建并传入读写db: tables.New$ENTITY_NAME$(wdb,rdb)
 	list, total, err := s$PACKAGE_NAME$.Model().FindList(params.Wheres, params.Extra)
 	if err != nil {
